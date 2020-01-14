@@ -15,7 +15,11 @@ void print_secret(){
     }
 }
 
-void funny_function(char* first, char* second, char* third, char* buffer){
+void funny_function(){
+  char buffer[100] = {0};
+  char first[8] = {0};
+  char second[8] = {0};
+  char third[8] = {0};
   char* secret1 = "hello\n";
   char* secret2 = "there\n";
   char* secret3 = "kenobi\n";
@@ -31,17 +35,14 @@ void funny_function(char* first, char* second, char* third, char* buffer){
 
   if (!strcmp(secret1, first) && !strcmp(secret2, second) && !strcmp(secret3, third)){
     printf("Wow, you got the corrrect input!\n");
+    return;
   } else {
     printf("Oh no!\n");
+    exit(1);
   }
 }
 
 int main() {
-    //printf("Hello World\n");
-    char buffer[100] = {0};
-    char first[8] = {0};
-    char second[8] = {0};
-    char third[8] = {0};
-    funny_function(first, second, third, buffer);
+    funny_function();
     return 0;
 }
