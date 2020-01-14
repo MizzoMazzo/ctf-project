@@ -18,33 +18,34 @@ void print_secret(){
 void funny_function(){
   char buffer[100] = {0};
 
-  char first[8] = {0};
+  char input1[8] = {0};
 
-  char second[8] = {0};
+  char input2[8] = {0};
 
-  char third[8] = {0};
+  char input3[8] = {0};
 
   char* secret1 = "hello\n";
   char* secret2 = "there\n";
   char* secret3 = "kenobi\n";
 
-  printf("Hello There, please provide your first input:\n");
-  read(0, first, 8);
-  if(strcmp(secret1, first)){
+  printf("Hello There, how about some Puzzles?\n");
+  printf("Please enter Solution No1\n")
+  read(0, input1, 8);
+  if(strcmp(secret1, input1)){
       puts("Oh no!\n");
       exit(0);
   }
 
 
   printf("Thank you, now the second:\n");
-  read(0, second, 8);
-  if(strcmp(secret2, second)){
+  read(0, input2, 8);
+  if(strcmp(secret2, input2)){
       puts("Oh no!\n");
       exit(0);
   }
   printf("Thanks, now the third:\n");
-  read(0, third, 8);
-  if(strcmp(secret3, third)){
+  read(0, input3, 8);
+  if(strcmp(secret3, input3)){
       puts("Oh no!\n");
       exit(0);
   }
