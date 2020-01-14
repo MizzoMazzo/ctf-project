@@ -17,29 +17,42 @@ void print_secret(){
 
 void funny_function(){
   char buffer[100] = {0};
+
   char first[8] = {0};
+
   char second[8] = {0};
+
   char third[8] = {0};
+
   char* secret1 = "hello\n";
   char* secret2 = "there\n";
   char* secret3 = "kenobi\n";
 
   printf("Hello There, please provide your first input:\n");
   read(0, first, 8);
+  if(strcmp(secret1, first)){
+      puts("Oh no!\n");
+      exit(0);
+  }
+
+
   printf("Thank you, now the second:\n");
   read(0, second, 8);
+  if(strcmp(secret2, second)){
+      puts("Oh no!\n");
+      exit(0);
+  }
   printf("Thanks, now the third:\n");
   read(0, third, 8);
+  if(strcmp(secret3, third)){
+      puts("Oh no!\n");
+      exit(0);
+  }
   printf("Alright, and now the last one:\n");
   read(0, buffer, 300);
+  printf("Wow, you got the corrrect input!\n");
+  return;
 
-  if (!strcmp(secret1, first) && !strcmp(secret2, second) && !strcmp(secret3, third)){
-    printf("Wow, you got the corrrect input!\n");
-    return;
-  } else {
-    printf("Oh no!\n");
-    exit(1);
-  }
 }
 
 int main() {
