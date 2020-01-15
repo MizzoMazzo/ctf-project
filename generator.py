@@ -29,11 +29,11 @@ int main() {
 }
 '''
 mem='''
-  char input1[8] = {0};
+  char input1[9] = {0};
 
-  char input2[8] = {0};
+  char input2[9] = {0};
 
-  char input3[8] = {0};
+  char input3[9] = {0};
 '''
 initmsg='''  printf("Hello There, how about some Puzzles?\\n");\n'''
 
@@ -47,7 +47,7 @@ lastone2 = ''');
 '''
 
 
-def randomString(stringLength=7):#TODO 7 or 8??? cause of \n
+def randomString(stringLength=7):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(stringLength))
 def genChecks(amount):
@@ -68,7 +68,7 @@ def gensecret(amount):
     for x in range(1,amount+1):
         secrets += "  char* secret"+str(x)+" = "+'"'+ randomString() +'''\\n";'''+"\n"
     return secrets
-def genRanFiles(amount):
+def genRanFiles(amount,remove=False):
     for x in range(1,amount+1):
         bufsize = 100 + random.randint(10,200)
         readsize = bufsize + random.randint(30,100)
@@ -80,6 +80,8 @@ def genRanFiles(amount):
         fil.close()
         cmd = "gcc "+ fname+" -O0 -no-pie -fno-stack-protector -masm=intel -o "+fname.split(".")[0]
         os.system(cmd)
+        if remove:
+            os.system("rm "+fname)
 
 
 
