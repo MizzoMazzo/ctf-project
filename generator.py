@@ -2,7 +2,6 @@ import random
 import string
 import os
 
-
 header = '''
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,9 +28,7 @@ int main() {
     return 0;
 }
 '''
-mem= '''
-  char buffer[100] = {0};
-
+mem='''
   char input1[8] = {0};
 
   char input2[8] = {0};
@@ -40,8 +37,9 @@ mem= '''
 '''
 initmsg='''  printf("Hello There, how about some Puzzles?\\n");\n'''
 
-lastone = '''  printf("Alright, and now the last one:\\n");
-  read(0, buffer, 300);
+lastone1 = '''  printf("Alright, and now the last one:\\n");
+  read(0, buffer, '''
+lastone2 = ''');
   printf("Wow, you got the corrrect input!\\n");
   return;
 
@@ -72,8 +70,11 @@ def gensecret(amount):
     return secrets
 def genRanFiles(amount):
     for x in range(1,amount+1):
+        bufsize = 100 + random.randint(10,200)
+        readsize = bufsize + random.randint(30,100)
+
         fname="binary"+str(x)+".c"
-        code = header + mem + gensecret(3) + initmsg + genChecks(3) + lastone+end
+        code = header +"  char buffer["+str(bufsize)+"] = {0};" + mem + gensecret(3) + initmsg + genChecks(3) + lastone1+str(readsize)+lastone2+end
         fil = open(fname,"w")
         fil.write(code)
         fil.close()
