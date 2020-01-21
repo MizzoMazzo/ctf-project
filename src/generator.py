@@ -25,7 +25,7 @@ void funny_function(){
 '''
 end='''
 int main() {
-    alarm(10);
+    alarm(20);
     funny_function();
     return 0;
 }
