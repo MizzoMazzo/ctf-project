@@ -8,7 +8,7 @@ header = '''
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-
+#include <unistd.h>
 void print_secret(){
     int i;
     FILE *fp;
@@ -25,6 +25,7 @@ void funny_function(){
 '''
 end='''
 int main() {
+    alarm(10);
     funny_function();
     return 0;
 }
