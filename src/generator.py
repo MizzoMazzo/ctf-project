@@ -37,7 +37,7 @@ mem='''
 
   char input3[9] = {0};
 '''
-initmsg='''  printf("Hello There, how about some Puzzles?\\n");\n'''
+initmsg=""#'''  printf("URANDOM enters the Room.\\nUrandom: Hello There...\\nUrandom: So you think you can determine my randomness?\\n\\nUrandom: HAH! You Fool!\\nUrandom: You will never solve my Puzzles!!!\\n");\n'''
 
 lastone1 = '''  printf("Alright, and now the last one:\\n");
   read(0, buffer, '''
