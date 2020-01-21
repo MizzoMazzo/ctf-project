@@ -37,7 +37,6 @@ mem='''
 
   char input3[9] = {0};
 '''
-initmsg=""#'''  printf("URANDOM enters the Room.\\nUrandom: Hello There...\\nUrandom: So you think you can determine my randomness?\\n\\nUrandom: HAH! You Fool!\\nUrandom: You will never solve my Puzzles!!!\\n");\n'''
 
 lastone1 = '''  printf("Alright, and now the last one:\\n");
   read(0, buffer, '''
@@ -79,7 +78,7 @@ def genRanFiles(name,amount,remove=False):
         else:
             fname="binary"+str(name)+".c"
 
-        code = header +"  char buffer["+str(bufsize)+"] = {0};" + mem + gensecret(3) + initmsg + genChecks(3) + lastone1+str(readsize)+lastone2+end
+        code = header +"  char buffer["+str(bufsize)+"] = {0};" + mem + gensecret(3)  + genChecks(3) + lastone1+str(readsize)+lastone2+end
         fil = open(fname,"w")
         fil.write(code)
         fil.close()

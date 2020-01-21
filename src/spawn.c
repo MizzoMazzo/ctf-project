@@ -26,24 +26,24 @@ void print_binary(){
   snprintf(filename, sizeof(filename), "binary%dencoded", getpid());
 
   fp = fopen(filename, "r");
-  printf("What is this??\nThe Evil Villain Urandom tries to Randomize ALL the Programs!!!\nYou as the Knight in a shining Sweatshirt have to save us!\nHe has hidden the master-key in this messy Mystery:\n\n\n");
+  printf("\nWhat is this??\n\nThe Evil Villain Urandom tries to Randomize ALL the Programs!!!\nYou, the Knight in the shining Sweatshirt have to save us!\nHe has hidden the master-key in this messy Mystery:\n\n\n");
   sleep(7);
   if (fp) {
       while ((i = getc(fp)) != EOF)
           putchar(i);
       fclose(fp);
   }
-  printf("\n==============================================================================\nHelp us to save the INTERNETZZZ!!!\n==============================================================================\n\n");
+  printf("\n==============================================================================\nHelp us save the INTERNETZZZ!!!\n==============================================================================\n\n");
   sleep(1);
   printf("Urandom entered the Room.\n");
   sleep(2);
   printf("Urandom: Hello There...\n");
   sleep(2);
   printf("Urandom: So you think you can determine my randomness?\n");
-  sleep(3);
+  sleep(2);
   printf("Urandom: HAH! You Fool!\n");
   sleep(2);
-  printf("Urandom: You will never solve my Puzzles!!!\n");
+  printf("Urandom: You will never solve my truly RANDOM Puzzles!!!\n");
 }
 
 void run_binary(){
