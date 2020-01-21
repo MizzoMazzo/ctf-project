@@ -1,7 +1,7 @@
 from base64 import b85encode
 import sys
 
-def reader(fname,iterations=5):
+def reader(fname,iterations=1):
     try:
         with open("binary"+fname, "rb") as binary_file:
             encoded = binary_file.read()
