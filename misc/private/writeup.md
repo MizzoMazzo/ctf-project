@@ -1,3 +1,5 @@
+Our challenge will provide a "random"-generated binary to exploit each run.
+
 General solution:
 
 1. Connect to the server and find out the used encoding for the binary
