@@ -1,6 +1,7 @@
 import random
 import string
 import os
+import sys
 
 header = '''
 #include <stdio.h>
@@ -68,12 +69,15 @@ def gensecret(amount):
     for x in range(1,amount+1):
         secrets += "  char* secret"+str(x)+" = "+'"'+ randomString() +'''\\n";'''+"\n"
     return secrets
-def genRanFiles(amount,remove=False):
+def genRanFiles(name,amount,remove=False):
     for x in range(1,amount+1):
         bufsize = 100 + random.randint(10,200)
         readsize = bufsize + random.randint(30,100)
+        if not name:
+            fname="binary"+str(x)+".c"
+        else:
+            fname="binary"+str(name)+".c"
 
-        fname="binary"+str(x)+".c"
         code = header +"  char buffer["+str(bufsize)+"] = {0};" + mem + gensecret(3) + initmsg + genChecks(3) + lastone1+str(readsize)+lastone2+end
         fil = open(fname,"w")
         fil.write(code)
@@ -86,7 +90,13 @@ def genRanFiles(amount,remove=False):
 
 
 def main():
-    genRanFiles(2)
+    if len(sys.argv)>1:
+        name=sys.argv[1]
+        genRanFiles(name, 1, True)
+    else:
+        name=None
+        genRanFiles(name, 2, True)
+
 
 
 
