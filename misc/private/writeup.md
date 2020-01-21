@@ -8,3 +8,8 @@ General solution:
 6. Use pwntools to find the buffer-length locally
 7. Find the address of the print_flag function with pwntools
 8. Exploit it on the next connection!
+
+
+To use the challenge locally, just run the "spawn" executable provided in the src/ folder.
+This file will give you the output you'll need.
+We will later implement this inside a Docker-Image on a hosted EC2-instance which will accept TCP-connections to be used with netcat.
