@@ -11,6 +11,7 @@ void generate_binary(){
   system(buffer);
 }
 
+//converts the binary using our script
 void convert_binary(){
   char buffer[40];
 
@@ -18,6 +19,7 @@ void convert_binary(){
   system(buffer);
 }
 
+//print the binary, but how? ;)
 void print_binary(){
   int i;
   char filename[40];
@@ -34,6 +36,7 @@ void print_binary(){
   }
 }
 
+//execute the generated binary
 void run_binary(){
   char filename[15];
 
@@ -42,6 +45,7 @@ void run_binary(){
   system(filename);
 }
 
+//remove all files after connection
 void cleanup(){
   char binaryfile[15];
   char encodedfile[30];
@@ -53,6 +57,12 @@ void cleanup(){
   remove(encodedfile);
 }
 
+//1. generate the binary
+//2. convert the binary
+//3. print the converted
+//4. execute the binary
+//5. cleanup system
+//6. go away!
 int main(){
   generate_binary();
   convert_binary();
