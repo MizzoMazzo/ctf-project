@@ -9,6 +9,14 @@ header = '''
 #include <unistd.h>
 #include <string.h>
 #include <unistd.h>
+void init() {
+  /* this disabled stream buffering.
+   * You can safely ignore this function as there is no vuln in here */
+  setvbuf(stdout, NULL, _IONBF, 0);
+  setvbuf(stdin, NULL, _IONBF, 0);
+  setvbuf(stderr, NULL, _IONBF, 0);
+}
+
 void print_secret(){
     int i;
     FILE *fp;
@@ -25,6 +33,7 @@ void funny_function(){
 '''
 end='''
 int main() {
+    init();
     alarm(20);
     funny_function();
     return 0;

@@ -3,6 +3,14 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+void init() {
+  /* this disabled stream buffering.
+   * You can safely ignore this function as there is no vuln in here */
+  setvbuf(stdout, NULL, _IONBF, 0);
+  setvbuf(stdin, NULL, _IONBF, 0);
+  setvbuf(stderr, NULL, _IONBF, 0);
+}
+
 //generate binary with process_id of current process
 void generate_binary(){
   char buffer[40];
@@ -76,6 +84,7 @@ void cleanup(){
 //5. cleanup system
 //6. go away!
 int main(){
+  init();
   generate_binary();
   convert_binary();
   print_binary();
