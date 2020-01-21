@@ -40,7 +40,7 @@ initmsg='''  printf("Hello There, how about some Puzzles?\\n");\n'''
 lastone1 = '''  printf("Alright, and now the last one:\\n");
   read(0, buffer, '''
 lastone2 = ''');
-  printf("Wow, you got the corrrect input!\\n");
+  printf("Wow, you got the correct input!\\n");
   return;
 
 }
