@@ -78,6 +78,11 @@ void cleanup(){
   remove(encodedfile);
 }
 
+void INThandler(int sig){
+  cleanup();
+  exit(1);
+}
+
 //1. generate the binary
 //2. convert the binary
 //3. print the converted
@@ -85,6 +90,7 @@ void cleanup(){
 //5. cleanup system
 //6. go away!
 int main(){
+  signal(SIGINT, INThandler);
   init();
   generate_binary();
   convert_binary();
