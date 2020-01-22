@@ -1,0 +1,13 @@
+version: '2.3'
+
+services:
+  challenge:
+    # build build `docker/Dockerfile`
+    build: src
+    # expose service on port:port_inside_docker
+    ports:
+      - 1337:1337
+    # set resource limits
+    cpus: 0.25
+    mem_limit: "300m"
+    mem_reservation: "50m"
