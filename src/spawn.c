@@ -85,7 +85,6 @@ void cleanup(){
 //5. cleanup system
 //6. go away!
 int main(){
-  int x;
   init();
   generate_binary();
   convert_binary();
