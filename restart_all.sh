@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /home/ubuntu/ctf-project
 
 #down all running compose-services
 docker-compose down
