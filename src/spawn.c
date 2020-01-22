@@ -59,10 +59,11 @@ void print_binary(){
 //execute the generated binary
 void run_binary(){
   char filename[15];
-
+  int x;
   snprintf(filename, sizeof(filename), "./binary%d", getpid());
   printf("\n");
-  system(filename);
+  x = system(filename);
+
 }
 
 //remove all files after connection
@@ -84,6 +85,7 @@ void cleanup(){
 //5. cleanup system
 //6. go away!
 int main(){
+  int x;
   init();
   generate_binary();
   convert_binary();
