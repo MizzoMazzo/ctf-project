@@ -1,0 +1,3 @@
+#!/bin/bash
+#gcc binary.c -O0 -no-pie -fno-stack-protector -masm=intel -o $1
+gcc spawn.c -o spawn
