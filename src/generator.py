@@ -29,7 +29,7 @@ void print_secret(){
     }
 }
 
-void funny_function(){
+int funny_function(){
 '''
 end='''
 int main() {
@@ -51,7 +51,7 @@ lastone1 = '''  printf("Alright, and now the last one:\\n");
   read(0, buffer, '''
 lastone2 = ''');
   printf("Wow, you got the correct input!\\n");
-  return;
+  return 0;
 
 }
 '''
@@ -67,7 +67,7 @@ def genChecks(amount):
         checks += "  read(0, input"+str(x)+", 8);\n"
         checks +='''  if(strcmp(secret'''+str(x)+''', input'''+str(x)+''')){
       puts("Oh no!\\n");
-      exit(0);
+      return 1;
   }
 '''
     return checks
