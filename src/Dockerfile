@@ -6,23 +6,15 @@ RUN apt-get update && apt-get install -y gcc \
     socat
 
 #prepare secure user environment
-#RUN adduser --disabled-password --gecos '' ctf
+RUN adduser --disabled-password --gecos '' ctf
 
-WORKDIR /app
+WORKDIR /home/ctf
 
 #copy files
-#COPY --chown=ctf:ctf . .
-COPY . .
+COPY --chown=ctf:ctf . .
 
-#RUN chown -R ctf:ctf .
-#RUN chmod 4755 generator.py
-#RUN chmod 4755 converter.py
-
-#USER ctf
+USER ctf
 RUN ./compile
-#RUN chmod 4755 spawn
-
-
-#USER nobody
+RUN chmod 770 spawn
 
 CMD socat tcp-l:1337,reuseaddr,fork,nodelay exec:"./spawn",stderr
