@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#down all running compose-services
+docker-compose down
+
 #pull git again
 git pull
 
