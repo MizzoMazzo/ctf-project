@@ -4,10 +4,15 @@ services:
   challenge:
     # build build `docker/Dockerfile`
     build: src
-    # expose service on port:port_inside_docker
+    restart: always
+    # expose service
     ports:
       - 1337:1337
     # set resource limits
     cpus: 0.25
     mem_limit: "300m"
     mem_reservation: "50m"
+
+    # drop all capabilities
+    cap_drop:
+      - ALL
