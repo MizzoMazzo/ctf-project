@@ -8,3 +8,6 @@ git pull
 
 #rebuild docker-compose services
 docker-compose up --build -d
+
+#checkout this file as it is modified somehow
+git checkout restart_all.sh
