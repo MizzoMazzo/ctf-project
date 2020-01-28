@@ -10,5 +10,5 @@ you will feel estranged,
 there is a faint of pain,  
 as I myself have changed.
 
-Hints: The data you will receive is encoded with Base85
+Hints: The data you will receive is encoded with Base85    
        Take a look at the example.c file
