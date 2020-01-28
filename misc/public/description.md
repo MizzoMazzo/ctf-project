@@ -10,5 +10,7 @@ you will feel estranged,
 there is a faint of pain,  
 as I myself have changed.
 
+nc basalt.scy-phy.net 1337    
+
 Hints: Take a look at the example.c file
        and by the way, it's base85 encoding ;-)
