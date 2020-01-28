@@ -34,19 +34,19 @@ int funny_function(){
   char* secret1 = "???????\n";
   char* secret2 = "???????\n";
   char* secret3 = "???????\n";
-  printf("Please enter Solution No1\n");
+  printf("Please enter secret 1\n");
   read(0, input1, 8);
   if(strcmp(secret1, input1)){
       puts("Oh no!\n");
       return 1;
   }
-  printf("Please enter Solution No2\n");
+  printf("Please enter secret 2\n");
   read(0, input2, 8);
   if(strcmp(secret2, input2)){
       puts("Oh no!\n");
       return 1;
   }
-  printf("Please enter Solution No3\n");
+  printf("Please enter secret 3\n");
   read(0, input3, 8);
   if(strcmp(secret3, input3)){
       puts("Oh no!\n");

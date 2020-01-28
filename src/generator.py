@@ -63,7 +63,7 @@ def randomString(stringLength=7):
 def genChecks(amount):
     checks=""
     for x in range(1,amount+1):
-        checks += '  printf("Please enter Solution No'+str(x)+'''\\n");\n'''
+        checks += '  printf("Please enter secret '+str(x)+'''\\n");\n'''
         checks += "  read(0, input"+str(x)+", 8);\n"
         checks +='''  if(strcmp(secret'''+str(x)+''', input'''+str(x)+''')){
       puts("Oh no!\\n");
